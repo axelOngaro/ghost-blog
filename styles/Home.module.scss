@@ -21,13 +21,32 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    li {
-      width: 100%;
-    }
+
     a {
       display: flex;
       justify-content: center;
-      width: 100%;
     }
+  }
+}
+
+@media screen and(min-width: 600px) {
+  .posts {
+    ul {
+      display: flex;
+      width: 100%;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    }
+  }
+}
+
+@media screen and(min-width:1000px) {
+  .posts {
+    display: grid;
+    grid-template-columns: 1fr 1000px 1fr;
+  }
+  .gridCenter {
+    grid-column: 2/3;
   }
 }

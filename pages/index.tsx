@@ -40,8 +40,8 @@ const Home: React.FC<{ posts: Post[] }> = (props) => {
         </p>
       </div>
       <div className={styles.posts}>
-        <h2>Latest Posts</h2>
-        <ul>
+        <h2 className={styles.gridCenter}>Latest Posts</h2>
+        <ul className={styles.gridCenter}>
           {posts.map((post, index) => {
             return (
               <li key={post.slug}>
