@@ -1,0 +1,33 @@
+.heroBanner {
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  h1 {
+    font-weight: 400;
+  }
+  p {
+    font-size: 14px;
+    width: 70%;
+    text-align: center;
+  }
+}
+
+.posts {
+  background-color: #7e9a93;
+  ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    li {
+      width: 100%;
+    }
+    a {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+  }
+}
