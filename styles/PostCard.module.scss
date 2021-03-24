@@ -30,10 +30,15 @@
     font-size: 14px;
     justify-self: end;
     margin: 0;
+    opacity: 0;
+    color: white;
   }
   &:hover {
     color: white;
     border: white solid 1px;
   }
-  transition: ease all 1s;
+  &:hover > .readMore {
+    opacity: 1;
+  }
+  // transition: ease all 0.2s;
 }
