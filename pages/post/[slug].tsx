@@ -1,7 +1,8 @@
-import Link from "next/link";
+import Link from 'next/link';
+import styles from '../../styles/Post.module.scss';
 const { BLOG_URL, CONTENT_API_KEY } = process.env;
-import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import { useRouter } from 'next/router';
+import React, { useEffect, useState } from 'react';
 
 async function getPost(slug: string) {
   const res = await fetch(
@@ -48,23 +49,30 @@ const Post: React.FC<{ post: Post }> = (props) => {
       this.page.url = window.location.href;
       this.page.identifier = post.slug;
     };
-    const script = document.createElement("script");
-    script.src = "https://ghost-blog-axel.disqus.com/embed.js";
-    script.setAttribute("data-timestamp", Date.now().toString());
+    const script = document.createElement('script');
+    script.src = 'https://ghost-blog-axel.disqus.com/embed.js';
+    script.setAttribute('data-timestamp', Date.now().toString());
 
     document.body.appendChild(script);
   }
 
   return (
-    <div>
+    <div className={styles.postPage}>
       <Link href="/">
         <a>Go back</a>
       </Link>
-      <h1>My blog post</h1>
-      <div dangerouslySetInnerHTML={{ __html: post.html }}></div>
-      {enableLoadComments && <p onClick={loadComments}>Load comments</p>}
+      <h1>{props.post.title}</h1>
+      <div
+        dangerouslySetInnerHTML={{ __html: post.html }}
+        className={styles.content}
+      ></div>
+      {enableLoadComments && (
+        <p onClick={loadComments} className={styles.comments}>
+          Load comments
+        </p>
+      )}
 
-      <div id="disqus_thread"></div>
+      <div id="disqus_thread" className={styles.comments}></div>
     </div>
   );
 };

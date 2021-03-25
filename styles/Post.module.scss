@@ -1,0 +1,16 @@
+.content {
+  padding: 5%;
+}
+
+@media screen and(min-width:550px) {
+  .postPage {
+    display: grid;
+    grid-template-columns: 1fr 50% 1fr;
+  }
+  .content {
+    grid-column: 2/3;
+  }
+  .comments {
+    grid-column: 2/3;
+  }
+}
